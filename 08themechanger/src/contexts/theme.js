@@ -1,13 +1,17 @@
+// Importing necessary modules from React
 import { createContext, useContext } from "react";
 
+// Creating a ThemeContext using createContext and providing default values
 export const ThemeContext = createContext({
-    themeMode: "light",
-    darkTheme: () => {},
-    lightTheme: () => {},
-})
+    themeMode: "light",   // Default theme mode is light
+    darkTheme: () => {},   // Placeholder function for enabling dark theme
+    lightTheme: () => {},  // Placeholder function for enabling light theme
+});
 
-export const ThemeProvider = ThemeContext.Provider
+// Creating a ThemeProvider and assigning it to ThemeContext.ThemeProvider
+export const ThemeProvider = ThemeContext.Provider;
 
-export default function useTheme(){
-    return useContext(ThemeContext)
+// Custom hook to use the theme context values
+export default function useTheme() {
+    return useContext(ThemeContext);
 }
