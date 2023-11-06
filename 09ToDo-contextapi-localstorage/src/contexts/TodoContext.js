@@ -1,22 +1,24 @@
-import {createContext, useContext} from "react"
+import { createContext, useContext } from "react";
 
+// Define a context to manage the state related to todos
 export const TodoContext = createContext({
     todos: [
         {
             id: 1,
-            todo: " Todo msg",
-            completed: false,
+            todo: "Todo msg", // A sample todo message
+            completed: false, // Indicates whether the todo is completed
         }
     ],
-    addTodo: (todo) => {},
-    updateTodo: (id, todo) => {},
-    deleteTodo: (id) => {},
-    toggleComplete: (id) => {}
-})
+    addTodo: (todo) => {}, // Function to add a new todo
+    updateTodo: (id, todo) => {}, // Function to update an existing todo
+    deleteTodo: (id) => {}, // Function to delete a todo
+    toggleComplete: (id) => {} // Function to toggle the completeness of a todo
+});
 
-
+// Custom hook to easily access the TodoContext
 export const useTodo = () => {
-    return useContext(TodoContext)
+    return useContext(TodoContext);
 }
 
-export const TodoProvider = TodoContext.Provider
+// Component that provides the TodoContext
+export const TodoProvider = TodoContext.Provider;
