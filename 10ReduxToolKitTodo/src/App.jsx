@@ -1,35 +1,34 @@
+// Importing the 'useState' function from the 'react' library
 import { useState } from 'react'
+
+// Importing the 'reactLogo' image from a local file
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+// Importing the 'viteLogo' image from a local file
+import viteLogo from '/vite.svg' // This path should be verified, it may not be correct.
+
+// Importing the styles defined in 'App.css'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Importing two React components: 'AddTodo' and 'Todos'
+import AddTodo from './components/AddTodo'
+import Todos from './components/Todos'
 
+// This is the main component of the application, named 'App'
+function App() {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* Displaying a heading with some text */}
+      <h1>Learn about redux toolkit</h1>
+
+      {/* Rendering the 'AddTodo' component, which allows adding new todos */}
+      <AddTodo />
+
+      {/* Rendering the 'Todos' component, which displays the list of todos */}
+      <Todos />
     </>
   )
 }
 
+// Exporting the 'App' component as the default export of this module
 export default App
